@@ -1,0 +1,20 @@
+{
+    "Mock Pastry 1": {
+        "description": "A short description",
+        "size": "M",
+        "price": 100,
+        "status": "available"
+    },
+    "Mock Pastry 2": {
+        "description": "A short description",
+        "size": "L",
+        "price": 10,
+        "status": "available"
+    },
+    "Mock Pastry 3": {
+        "description": "A short description",
+        "size": "M",
+        "price": 518,
+        "status": "available"
+    }
+}
