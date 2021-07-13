@@ -1,0 +1,38 @@
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-pastry-mock
+  namespace: service-pastry
+  labels:
+    app: service-pastry-mock
+    subsystem: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-pastry-mock
+      subsystem: app
+  template:
+    metadata:
+      labels:
+        app: service-pastry-mock
+        subsystem: app
+    spec:
+      enableServiceLinks: false
+      containers:
+        - name: service-pastry-mock
+          image: whitehatdev.azurecr.io/service-pastry-mock
+          imagePullPolicy: Never
+          ports:
+            - name: http
+              containerPort: 5000
+              hostPort: 5000
+          resources:
+            limits:
+              cpu: 4
+              memory: 1Gi
+            requests:
+              cpu: 0.5
+              memory: 512Mi
